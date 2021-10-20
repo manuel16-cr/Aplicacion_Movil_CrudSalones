@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+/*Se importan las librerias de los estilos de toastr*/
+@import '~ngx-toastr/toastr';
+/*Programacion del body que no se repita la imagen*/
+body{
+    /*background: linear-gradient(rgba(194, 183, 183, 0.1), rgb(236, 219, 219)),url('./assets/19104437.jpg');*/
+    background-image: url('./assets/img_0973.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}

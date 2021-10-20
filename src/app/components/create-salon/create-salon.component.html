@@ -1,0 +1,46 @@
+<!--PROGRAMACION DE CREAR NUEVO SALON-->
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h3>{{titulo}}
+                        <!--colocamos un spinner solo cuando loading se verdadero-->
+                        <div *ngIf = "loading" class="spinner-border float-right" role="status">
+                            <span class="sr-only">Loading...</span>
+                          </div>
+                    </h3> 
+                    <!--Condicion para que aparasca el mensaje cuando los campos no se llenan-->
+                    <span *ngIf="submitted && createSalon.invalid" >TODOS LOS DATOS SON OBLIGATORIOS</span>
+                    
+                    <!--PROGRAMACION DEL FORMULARIO PARA AGREGAR SALON-->
+                    <!--Conectamos el formulario y conectamos las avariables para cada campo con el
+                    formcontrolname-->
+                    <!--Cuando se de enter en el boton de agregar se ejecutara un metodo 
+                        ngsubmit=agregarEditarEmpleado-->
+                    <form class="mt-4" [formGroup]="createSalon" (ngSubmit)="agregarEditarSalon()">
+                        <div class="row">
+                            
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" 
+                                        formControlName="identificador" placeholder="Identificador">
+                            </div>
+
+                            <div class="col">
+                                <input type="text" class="form-control form-control-lg" 
+                                        formControlName="edificio" placeholder="Edificio">
+                            </div>
+
+                        </div>
+                        
+                        <div class="mt-3">
+                            <button type="text" class="btn btn-secondary btn-lg " style="margin-right: 20px;"
+                            routerLink="/list-salon">Volver</button>
+                            <button type="submit" class="btn btn-dark btn-lg">Agregar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,34 @@
+<!--Programacion de las vistas de los empleados-->
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <span class="h3">Listado de salones</span>
+            <br><br>
+            <!--Boton de agregar-->
+            <!--Directiva routerlink para direccionar el boton-->
+            <button class="btn btn-dark btn-lg float-right" routerLink="/create-salon">Agregar</button>
+            <table  class="table table-striped mt-5">
+                <thead>
+                  <tr>
+                    <th>Identificador</th>
+                    <th>Edificio</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--DIRECTIVA DE NGFOR PARA RECORDAR EL ARRAY DE EMPLEADOS-->
+                  <tr *ngFor="let salon of salones">
+                    <td>{{salon.identificador}}</td>
+                    <td>{{salon.edificio}}</td>
+                    <!--Botones de font awesome, usamos la directiva de routerlink-->
+                    <td><i class="fas fa-edit fa-lg text-info " [routerLink]="['/editsalon/', salon.id]" style="margin-right: 10px;"></i>
+                        <!--Crearemos un evento click y ejecutar el metodo eliminarSalon-->
+                        <i (click)="eliminarSalon(salon.id)" class="fas fa-trash-alt fa-lg text-danger"></i></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
